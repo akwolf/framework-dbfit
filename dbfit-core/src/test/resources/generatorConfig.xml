@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+		location="C:\Users\zhangh\.m2\repository\mysql\mysql-connector-java\5.1.25\mysql-connector-java-5.1.25.jar" />
+
+	<properties resource="jtester.properties"></properties>
+
+	<context id="db_justsy_ccb" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+		<!-- mysql -->
+
+		<!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.2.201:3306/db_justsy_ccb" 
+			userId="db_justsy_ccb" password="TwuwYDRzOTW1Z2LWVJUe" /> -->
+		<jdbcConnection driverClass="${database.driverClassName}"
+			connectionURL="${database.url}" userId="${database.userName}" password="${database.password}" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator targetPackage="com.justsy.dbfit.pojo"
+			targetProject="dbfit-pojo/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<table tableName="t_user" domainObjectName="User"
+			enableSelectByExample="false" enableDeleteByExample="false"
+			enableCountByExample="false" enableUpdateByExample="false" />
+		<table tableName="t_login_log" domainObjectName="UserLog"
+			enableSelectByExample="false" enableDeleteByExample="false"
+			enableCountByExample="false" enableUpdateByExample="false" />
+
+	</context>
+</generatorConfiguration>
